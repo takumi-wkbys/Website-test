@@ -265,59 +265,102 @@ section h2::after {
     font-size: 0.95em;
 }
 
-/* Responsive Design */
+/* Modal (Popup) Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: var(--background-card);
+    margin: auto;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    width: 80%;
+    max-width: 700px;
+    position: relative;
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.close-button {
+    color: var(--dark-text-color);
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: var(--accent-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content h3 {
+    color: var(--primary-color);
+    font-size: 2em;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.modal-content p {
+    font-size: 1.1em;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.modal-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.modal-images img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
 @media (max-width: 768px) {
-    .container {
-        width: 95%;
+    .modal-content {
+        width: 90%;
+        padding: 20px;
     }
 
-    .header h1 {
-        font-size: 2.8em;
+    .modal-content h3 {
+        font-size: 1.5em;
     }
 
-    .header p {
-        font-size: 1.1em;
-    }
-
-    section {
-        padding: 40px 0;
-    }
-
-    section h2 {
-        font-size: 2.2em;
-        margin-bottom: 30px;
-    }
-
-    .about-section p {
+    .modal-content p {
         font-size: 1em;
     }
 
-    .skills-grid {
+    .modal-images {
         grid-template-columns: 1fr;
-    }
-
-    .skill-item h3 {
-        font-size: 1.5em;
-    }
-
-    .hobby-item {
-        flex: 1 1 100%; /* 1 item per row on small screens */
-    }
-
-    .hobby-item h3 {
-        font-size: 1.5em;
-    }
-
-    .vision-section {
-        padding: 40px 0;
-    }
-
-    .vision-section h2 {
-        font-size: 2.5em;
-    }
-
-    .vision-section .vision-text {
-        font-size: 1.1em;
     }
 }
 

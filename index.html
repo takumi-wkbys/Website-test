@@ -82,15 +82,15 @@
             <div class="container">
                 <h2>趣味</h2>
                 <div class="hobbies-list">
-                    <div class="hobby-item">
+                    <div class="hobby-item" data-hobby-id="coffee">
                         <h3>コーヒー・カフェ巡り</h3>
                         <p>週末は新しいカフェを探索したり、自宅でハンドドリップを楽しんでいます。豆の種類や淹れ方によって変わる香りと味の探求が日々の癒しです。</p>
                     </div>
-                    <div class="hobby-item">
+                    <div class="hobby-item" data-hobby-id="manga">
                         <h3>漫画を読む（少年ジャンプ・ミステリー系）</h3>
                         <p>少年ジャンプの熱いストーリーや、予測不能な展開のミステリー漫画を読むのが好きです。物語からインスピレーションを得ることもあります。</p>
                     </div>
-                    <div class="hobby-item">
+                    <div class="hobby-item" data-hobby-id="training">
                         <h3>ランニングと筋トレ</h3>
                         <p>健康維持と気分転換のために、週に数回ランニングと筋力トレーニングを行っています。目標に向かって努力することの楽しさを感じています。</p>
                     </div>
@@ -104,6 +104,18 @@
             <p>&copy; 2025 takumi.w All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Hobby Detail Modal (Popup) -->
+    <div id="hobby-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h3 id="modal-title"></h3>
+            <p id="modal-description"></p>
+            <div id="modal-images" class="modal-images"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
 
