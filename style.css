@@ -276,7 +276,6 @@ section h2::after {
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
     background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
-    display: flex;
     align-items: center;
     justify-content: center;
 }
