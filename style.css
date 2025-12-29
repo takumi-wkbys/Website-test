@@ -11,25 +11,27 @@
 }
 
 body {
-    font-family: 'Noto Sans JP', sans-serif; /* 日本語フォントを優先 */
-    line-height: 1.6;
+    font-family: 'Lato', 'Zen Kaku Gothic New', sans-serif; /* 日本語フォントを優先 */
+    line-height: 1.7;
     margin: 0;
     padding: 0;
     background-color: var(--background-light);
     color: var(--dark-text-color);
+    scroll-behavior: smooth;
 }
 
-
 .container {
-    width: 80%;
+    width: 90%;
+    max-width: 1200px;
     margin: auto;
     overflow: hidden;
     padding: 20px 0;
 }
 
 h1, h2, h3 {
-    font-family: 'Montserrat', sans-serif; /* タイトルは英語フォントを優先 */
-    color: #333;
+    font-family: 'Oswald', sans-serif; /* タイトルは英語フォントを優先 */
+    color: var(--dark-text-color);
+    font-weight: 700;
 }
 
 /* Header */
@@ -45,75 +47,88 @@ h1, h2, h3 {
 .header h1 {
     margin: 0;
     padding: 0;
-    font-size: 3em;
-    color: #fff;
+    font-size: 3.5em;
+    color: var(--light-text-color);
+    letter-spacing: 2px;
 }
 
 .header p {
-    font-size: 1.2em;
-    margin-top: 5px;
+    font-size: 1.3em;
+    margin-top: 10px;
+    font-weight: 400;
 }
 
 /* Sections */
 section {
-    padding: 40px 0;
-    margin-bottom: 20px;
+    padding: 60px 0;
+    margin-bottom: 30px;
     background: var(--background-card);
-    border-radius: 8px;
-    box-shadow: 0 5px 15px var(--shadow-color);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px var(--shadow-color);
+    transition: all 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
 }
 
 section h2 {
     text-align: center;
-    margin-bottom: 30px;
-    font-size: 2.5em;
+    margin-bottom: 40px;
+    font-size: 3em;
     position: relative;
     color: var(--dark-text-color);
+    letter-spacing: 1px;
 }
 
 section h2::after {
     content: '';
     position: absolute;
     left: 50%;
-    bottom: -10px;
+    bottom: -15px;
     transform: translateX(-50%);
-    width: 60px;
-    height: 3px;
+    width: 80px;
+    height: 4px;
     background-color: var(--accent-color);
+    border-radius: 2px;
 }
 
 /* About Section */
 .about-section p {
     text-align: center;
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
-    font-size: 1.1em;
+    font-size: 1.2em;
+    line-height: 1.8;
 }
 
 /* Skills Section */
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
 }
 
 .skill-item {
     background: var(--background-card);
-    padding: 20px;
-    border-left: var(--secondary-color) 4px solid;
-    border-radius: 5px;
+    padding: 25px;
+    border-left: var(--secondary-color) 5px solid;
+    border-radius: 8px;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    box-shadow: 0 2px 5px var(--shadow-color);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
 }
 
 .skill-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
 }
 
 .skill-item h3 {
     color: var(--primary-color);
     margin-top: 0;
+    font-size: 1.8em;
+    margin-bottom: 15px;
 }
 
 .skill-item ul {
@@ -122,8 +137,9 @@ section h2::after {
 }
 
 .skill-item ul li {
-    padding: 5px 0;
-    border-bottom: 1px dotted #eee;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 1.1em;
 }
 
 .skill-item ul li:last-child {
@@ -135,24 +151,37 @@ section h2::after {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 30px;
 }
 
 .hobby-item {
     background: var(--background-card);
-    padding: 20px;
-    border-radius: 5px;
-    flex: 1 1 calc(33% - 40px); /* 3 items per row, with gap */
+    padding: 25px;
+    border-radius: 8px;
+    flex: 1 1 calc(33% - 60px); /* 3 items per row, with gap */
     box-sizing: border-box;
     text-align: center;
-    border-bottom: var(--accent-color) 3px solid;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 2px 5px var(--shadow-color);
+    border-bottom: var(--accent-color) 5px solid;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
 }
 
 .hobby-item:hover {
     background-color: var(--secondary-color);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+    transform: translateY(-8px);
+}
+
+.hobby-item h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+.hobby-item p {
+    font-size: 1.1em;
+    line-height: 1.7;
 }
 
 /* Vision Section */
@@ -226,21 +255,69 @@ section h2::after {
 }
 
 /* Footer */
+.footer {
+    text-align: center;
+    padding: 25px;
+    background: var(--primary-color);
+    color: var(--light-text-color);
+    margin-top: 40px;
+    border-top: var(--secondary-color) 4px solid;
+    font-size: 0.95em;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
     .container {
-        width: 90%;
+        width: 95%;
     }
 
     .header h1 {
-        font-size: 2.5em;
+        font-size: 2.8em;
+    }
+
+    .header p {
+        font-size: 1.1em;
+    }
+
+    section {
+        padding: 40px 0;
+    }
+
+    section h2 {
+        font-size: 2.2em;
+        margin-bottom: 30px;
+    }
+
+    .about-section p {
+        font-size: 1em;
     }
 
     .skills-grid {
         grid-template-columns: 1fr;
     }
 
+    .skill-item h3 {
+        font-size: 1.5em;
+    }
+
     .hobby-item {
         flex: 1 1 100%; /* 1 item per row on small screens */
+    }
+
+    .hobby-item h3 {
+        font-size: 1.5em;
+    }
+
+    .vision-section {
+        padding: 40px 0;
+    }
+
+    .vision-section h2 {
+        font-size: 2.5em;
+    }
+
+    .vision-section .vision-text {
+        font-size: 1.1em;
     }
 }
 
